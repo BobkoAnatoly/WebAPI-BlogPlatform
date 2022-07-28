@@ -1,5 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using WebAPI_Blog.Database;
+using WebAPI_Blog.Services.Implementations;
+using WebAPI_Blog.Services.Interfaces;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,6 +11,7 @@ string connection = builder.Configuration.GetConnectionString("DefaultConnection
 builder.Services.AddControllers();
 
 builder.Services.AddDbContext<ApplicationContext>(opt => opt.UseSqlServer(connection));
+builder.Services.AddTransient<IUserService, UserService>();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 

@@ -11,7 +11,7 @@ using WebAPI_Blog.Database;
 namespace WebAPI_Blog.Migrations
 {
     [DbContext(typeof(ApplicationContext))]
-    [Migration("20220728132634_InitialCreate")]
+    [Migration("20220728163939_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
